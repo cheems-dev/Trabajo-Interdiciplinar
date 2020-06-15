@@ -54,7 +54,7 @@ Aún en desarrollo
 ---
 
 ## Equipo de Desarrollo
-* **Gonzalo Alejandro Caira Aguilar** - Correo : [gcairaa@unsa.edu.pe](gcairaa@unsa.edu.pe)
+* [**Gonzalo Alejandro Caira Aguilar**](https://github.com/madscientist98) -Correo : [gcairaa@unsa.edu.pe](gcairaa@unsa.edu.pe)
 * **Ccalluchi Lopez Luis Alberto** - Correo : []()
 * **Yanqui Vera Henry Aron**  - Correo : []()
 * **Bustamante Torres Luis Angel** - Correo : []()
