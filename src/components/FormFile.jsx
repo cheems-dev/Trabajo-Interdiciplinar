@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { storage } from "./firebase/index";
+import { storage } from "../firebase/index";
 
-const App = () => {
+function FormFile() {
   const [file, setFile] = useState(null);
   const [url, setUrl] = useState("");
   const [progress, setProgress] = useState(0);
@@ -48,6 +48,6 @@ const App = () => {
       {url}
     </>
   );
-};
+}
 
-export default App;
+export default FormFile;
