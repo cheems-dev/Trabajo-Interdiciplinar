@@ -56,6 +56,6 @@ Aún en desarrollo
 ## Equipo de Desarrollo
 * **Gonzalo Alejandro Caira Aguilar** - Correo : [gcairaa@unsa.edu.pe](gcairaa@unsa.edu.pe)
 * **Ccalluchi Lopez Luis Alberto** - Correo : daprimovaria@outlook.com
-* **Yanqui Vera Henry Aron**  - Correo : []()
+* **Yanqui Vera Henry Aron**  - Correo : [hyanquiv@unsa.edu.pe](hyanquiv@unsa.edu.pe)
 * **Bustamante Torres Luis Angel** - Correo : []()
 * **Vargas Herhuay Edwar Jhoel** - Correo : []()
