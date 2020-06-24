@@ -57,5 +57,5 @@ Aún en desarrollo
 * **Gonzalo Alejandro Caira Aguilar** - Correo : [gcairaa@unsa.edu.pe](gcairaa@unsa.edu.pe)
 * **Ccalluchi Lopez Luis Alberto** - Correo : daprimovaria@outlook.com
 * **Yanqui Vera Henry Aron**  - Correo : [hyanquiv@unsa.edu.pe](hyanquiv@unsa.edu.pe)
+* **Vargas Herhuay Edwar Jhoel** - Correo : [evargashe@unsa.edu.pe](evargashe@unsa.edu.pe)
 * **Bustamante Torres Luis Angel** - Correo : []()
-* **Vargas Herhuay Edwar Jhoel** - Correo : []()
