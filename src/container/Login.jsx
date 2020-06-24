@@ -76,54 +76,54 @@ class Login extends Component {
       const { formErrors } = this.state;
   
       return (
-        <div className="wrapper">
+         <div className="wrapper">
             <div className="img">
               <img src={Unsa}alt=""/>
             </div>
             <div className="form-wrapper">
-              <img className="avatar" src={Csunsa} alt=""/>
-              <form className="login-container" 
-                onSubmit={this.handleSubmit} >
-                <h1 className="title">LOGIN</h1>
-                <div className="input-div">
-                  <div className="email">
-                    <label htmlFor="email">Email</label>
-                    <input
-                      className={formErrors.email.length > 0 ? "error" : null}
-                      placeholder="Email"
-                      type="email"
-                      name="email"
-                      noValidate
-                      onChange={this.handleChange}
-                    />
-                    {formErrors.email.length > 0 && (
-                      <span className="errorMessage">{formErrors.email}</span>
-                    )}
+               <img className="avatar" src={Csunsa} alt=""/>
+               <form className="login-container" 
+                  onSubmit={this.handleSubmit} >
+                  <h1 className="title">LOGIN</h1>
+                  <div className="input-div">
+                     <div className="email">
+                     <label htmlFor="email">Email</label>
+                     <input
+                        className={formErrors.email.length > 0 ? "error" : null}
+                        placeholder="Email"
+                        type="email"
+                        name="email"
+                        noValidate
+                        onChange={this.handleChange}
+                     />
+                     {formErrors.email.length > 0 && (
+                        <span className="errorMessage">{formErrors.email}</span>
+                     )}
+                     </div>
                   </div>
-                </div>
-                <div className="input-div">
-                  
-                  <div className="password">
-                    <label htmlFor="password">Password</label>
-                    <input
-                      className={formErrors.password.length > 0 ? "error" : null}
-                      placeholder="Password"
-                      type="password"
-                      name="password"
-                      noValidate
-                      onChange={this.handleChange}
-                    />
-                    {formErrors.password.length > 0 && (
-                      <span className="errorMessage">{formErrors.password}</span>
-                    )}
+                  <div className="input-div">
+                     
+                     <div className="password">
+                     <label htmlFor="password">Password</label>
+                     <input
+                        className={formErrors.password.length > 0 ? "error" : null}
+                        placeholder="Password"
+                        type="password"
+                        name="password"
+                        noValidate
+                        onChange={this.handleChange}
+                     />
+                     {formErrors.password.length > 0 && (
+                        <span className="errorMessage">{formErrors.password}</span>
+                     )}
+                     </div>
                   </div>
-                </div>
-                <div className="createAccount">
-                  <input className="button" type="submit" value="Login"/>
-                </div>
-              </form>
+                  <div className="createAccount">
+                     <input className="button" type="submit" value="Login"/>
+                  </div>
+               </form>
             </div>
-        </div>
+         </div>
       );
    }
 }

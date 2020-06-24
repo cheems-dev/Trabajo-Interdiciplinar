@@ -1,7 +1,6 @@
 .wrapper {
    background-position: center center;
    background: -webkit-radial-gradient(blue,green);
-    
    width: 100vw;
    height: 98vh;
    display: grid;
