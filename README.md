@@ -58,4 +58,4 @@ Aún en desarrollo
 * **Ccalluchi Lopez Luis Alberto** - Correo : daprimovaria@outlook.com
 * **Yanqui Vera Henry Aron**  - Correo : [hyanquiv@unsa.edu.pe](hyanquiv@unsa.edu.pe)
 * **Vargas Herhuay Edwar Jhoel** - Correo : [evargashe@unsa.edu.pe](evargashe@unsa.edu.pe)
-* **Bustamante Torres Luis Angel** - Correo : []()
+* **Bustamante Torres Luis Angel** - Correo : [asfasfas](asfasfsaf)

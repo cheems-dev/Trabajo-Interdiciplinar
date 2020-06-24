@@ -4,8 +4,9 @@ import FormFile from "../components/FormFile";
 function Home() {
   return (
     <div>
-      <FormFile></FormFile>
+      <FormFile/>
     </div>
+
   );
 }
 
