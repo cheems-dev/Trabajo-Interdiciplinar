@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import "../container/Login.css";
 import Csunsa from "../computerscience.png";
-import Unsa from "../unsalogo.png";
 
 const emailRegex = RegExp(
    /^[a-z]+@[a-z]+(?:\.[a-z]+)*$/
@@ -76,10 +75,11 @@ class Login extends Component {
       const { formErrors } = this.state;
   
       return (
+      <form className="body">   
          <div className="wrapper">
-            <div className="img">
+            {/*<div className="img">
               <img src={Unsa}alt=""/>
-            </div>
+            </div>*/}
             <div className="form-wrapper">
                <img className="avatar" src={Csunsa} alt=""/>
                <form className="login-container" 
@@ -124,6 +124,7 @@ class Login extends Component {
                </form>
             </div>
          </div>
+      </form>  
       );
    }
 }

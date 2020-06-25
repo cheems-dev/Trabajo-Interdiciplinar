@@ -1,12 +1,25 @@
+
+*{
+   margin: 0;
+   padding: 0;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+.body {
+   background: url(../pabelloncs.png);
+   background-size: cover;
+   background-attachment: fixed;
+   font-family: Roboto;
+}
 .wrapper {
-   background-position: center center;
-   background: -webkit-radial-gradient(blue,green);
-   width: 100vw;
-   height: 98vh;
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   grid-gap:  7rem;
-   padding: 0 2rem;
+   font-size: Roboto;
+   max-width: 400px;
+   width: 100%;
+   margin: 48px auto;
+   border-radius: 5px;
+   color: #fff;
+   position: relative;
 }
 .img{
    display: flex;
@@ -17,14 +30,14 @@
 .img img{
    width: 500px; 
 }
- 
 .login-container{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   text-align: center ;
+   display: none;
+   padding: 40px;
 }
- 
+.login-container:nth-child(2)
+{
+   display: block;
+}
 form {
    width: 360px;
 }
@@ -35,11 +48,20 @@ form {
 }
  
 .title{
-   font-size: 2.9rem;
-   text-transform:  uppercase;
-   margin: 15px 0;
-   color: #333;
+   position: absolute;
+   top: 15px;
+   right: 15px;
+   width: 100px;
+   height: 30px;
+   font-size: 20px;
+   line-height: 25px;
+   text-align: center;
+   border-top: 2px solid greenyellow;
+   border-bottom: 2px solid blue;
+   transition: all .5s ease;
+   letter-spacing: 5px;
 }
+
 .input-div{
    position: relative;
    display: flex;
@@ -48,6 +70,8 @@ form {
    padding: 5px 0;
    border-bottom: 2px solid #d9d9d9;
 }
+
+
 .input-div::after , .input-div::before {
    content: ' ';
    position: absolute;
@@ -72,7 +96,7 @@ form {
    display: flex;
    flex-direction: column;
    padding: 20px 40px;
-   border-radius: 10px;
+   border-radius: 15px;
    box-shadow: 0px 10px 50px #555;
    background-color: #ffffff;
 }
@@ -122,31 +146,32 @@ input.error {
    color: red;
    font-size: 0.75em;
    display: relative;
+   margin: 10px 0 0 10px;
 }
  
 .email,
 .password {
+   outline: none;
    display: flex;
    flex-direction: column;
    margin-bottom: 15px;
    width: 100%;
 }
  
- 
- 
+
 .createAccount {
    width: 100%;
    display: flex;
    flex-direction: column;
    align-items: center;
 }
- 
+
 .createAccount input {
    background: #5d8ffc;
    color: #fff;
    border: 1px solid #5d8ffc;
    border-radius: 5px;
-   padding: 15px;
+   padding: 15px 0;
    display: block;
    width: 100%;
    transition: 0.3s;
@@ -157,14 +182,14 @@ input.error {
 .createAccount input:hover {
    color: #519e8a;
    background-color: #fff;
-   border: 2px solid #519e8a;
+   border: 2px solid greenyellow;
 }
  
 .createAccount small {
    color: #999;
    font-weight: lighter;
 }
- 
+
 @media screen and (max-width:1000px)
 {
    form {
@@ -174,9 +199,7 @@ input.error {
      font-size: 2.4rem;
      margin: 8px 0;
    }
-   .img img{
-     width: 400px;
-   }
+
 }
 @media screen and (max-width: 900px)
 {
