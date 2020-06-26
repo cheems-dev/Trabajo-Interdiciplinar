@@ -7,29 +7,24 @@
    box-sizing: border-box;
 }
 .body {
-   background: url(../pabelloncs.png);
-   background-size: cover;
+   margin: 0;
+   padding: 0;
+   background: url(../pabelloncs.png) no-repeat center top;
+   background-size: 100vw 100vh;
    background-attachment: fixed;
-   font-family: Roboto;
+   font-family: sans-serif;
+   height: 100vh;
 }
 .wrapper {
-   font-size: Roboto;
    max-width: 400px;
    width: 100%;
    margin: 48px auto;
+   box-sizing: border-box;
    border-radius: 5px;
    color: #fff;
    position: relative;
 }
-.img{
-   display: flex;
-   justify-content: flex-end;
-   align-items: center;
-}
- 
-.img img{
-   width: 500px; 
-}
+
 .login-container{
    display: none;
    padding: 40px;
@@ -42,18 +37,21 @@ form {
    width: 360px;
 }
 .avatar {
-   display: flex;
-   justify-content: flex-end;
-   align-items: center;
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   position: absolute;
+   top: -50px;
+   left: calc(50% - 50px);
 }
  
 .title{
-   position: absolute;
+   position: center;
    top: 15px;
    right: 15px;
    width: 100px;
    height: 30px;
-   font-size: 20px;
+   font-size: 22px;
    line-height: 25px;
    text-align: center;
    border-top: 2px solid greenyellow;
@@ -66,8 +64,8 @@ form {
    position: relative;
    display: flex;
    flex-direction: column;
-   margin:  10px 0;
-   padding: 5px 0;
+   margin:  15px 0;
+   padding: 15px 0;
    border-bottom: 2px solid #d9d9d9;
 }
 
@@ -170,17 +168,19 @@ input.error {
    background: #5d8ffc;
    color: #fff;
    border: 1px solid #5d8ffc;
-   border-radius: 5px;
+   border-radius: 20px;
    padding: 15px 0;
    display: block;
    width: 100%;
    transition: 0.3s;
+   font-size: 18px;
    -webkit-transition: 0.3s;
    -moz-transition: 0.3s;
 }
  
 .createAccount input:hover {
    color: #519e8a;
+   cursor: pointer;
    background-color: #fff;
    border: 2px solid greenyellow;
 }
@@ -190,33 +190,13 @@ input.error {
    font-weight: lighter;
 }
 
-@media screen and (max-width:1000px)
+@media (max-width: 700px)
 {
-   form {
-     width: 290px;
+   .body{
+      width: 100%;
    }
-   form h1{
-     font-size: 2.4rem;
-     margin: 8px 0;
+   .wrapper{
+      width: 100%;
    }
+}
 
-}
-@media screen and (max-width: 900px)
-{
-   .img{
-     display: none;
- 
-   }
- 
-   .wrapper {
-     grid-template-columns: 1fr;
-   }
-   .wave {
-     display: none;
-   }
-   .login-container{
-     justify-content: center;
-   }
-}
- 
- 

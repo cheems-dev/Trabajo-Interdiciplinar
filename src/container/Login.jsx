@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import "../container/Login.css";
 import Csunsa from "../computerscience.png";
+import Form from "react-bootstrap/Form";
 
 const emailRegex = RegExp(
    /^[a-z]+@[a-z]+(?:\.[a-z]+)*$/
@@ -75,7 +76,7 @@ class Login extends Component {
       const { formErrors } = this.state;
   
       return (
-      <form className="body">   
+      <Form className="body">   
          <div className="wrapper">
             {/*<div className="img">
               <img src={Unsa}alt=""/>
@@ -87,35 +88,35 @@ class Login extends Component {
                   <h1 className="title">LOGIN</h1>
                   <div className="input-div">
                      <div className="email">
-                     <label htmlFor="email">Email</label>
-                     <input
-                        className={formErrors.email.length > 0 ? "error" : null}
-                        placeholder="Email"
-                        type="email"
-                        name="email"
-                        noValidate
-                        onChange={this.handleChange}
-                     />
-                     {formErrors.email.length > 0 && (
-                        <span className="errorMessage">{formErrors.email}</span>
-                     )}
+                        <label htmlFor="email">Email</label>
+                        <input
+                           className={formErrors.email.length > 0 ? "error" : null}
+                           placeholder="Email"
+                           type="email"
+                           name="email"
+                           noValidate
+                           onChange={this.handleChange}
+                        />
+                        {formErrors.email.length > 0 && (
+                           <span className="errorMessage">{formErrors.email}</span>
+                        )}
                      </div>
                   </div>
                   <div className="input-div">
                      
                      <div className="password">
-                     <label htmlFor="password">Password</label>
-                     <input
-                        className={formErrors.password.length > 0 ? "error" : null}
-                        placeholder="Password"
-                        type="password"
-                        name="password"
-                        noValidate
-                        onChange={this.handleChange}
-                     />
-                     {formErrors.password.length > 0 && (
-                        <span className="errorMessage">{formErrors.password}</span>
-                     )}
+                        <label htmlFor="password">Password</label>
+                        <input
+                           className={formErrors.password.length > 0 ? "error" : null}
+                           placeholder="Password"
+                           type="password"
+                           name="password"
+                           noValidate
+                           onChange={this.handleChange}
+                        />
+                        {formErrors.password.length > 0 && (
+                           <span className="errorMessage">{formErrors.password}</span>
+                        )}
                      </div>
                   </div>
                   <div className="createAccount">
@@ -124,7 +125,7 @@ class Login extends Component {
                </form>
             </div>
          </div>
-      </form>  
+      </Form>  
       );
    }
 }
