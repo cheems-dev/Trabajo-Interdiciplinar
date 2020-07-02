@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "../container/Login.css";
-import cs from "../../assets/img/cs.png";
+// import "../../a";
+// import cs from "../../assets/img/cs.png";
 
 const emailRegex = RegExp(/^[a-z]+@[a-z]+(?:\.[a-z]+)*$/);
 
@@ -74,10 +74,10 @@ class Login extends Component {
     return (
       <div className="wrapper">
         <div className="img">
-          <img src={Unsa} alt="" />
+          {/* <img src={cs} alt="" /> */}
         </div>
         <div className="form-wrapper">
-          <img className="avatar" src={cs} alt="" />
+          {/* <img className="avatar" src={cs} alt="" /> */}
           <form className="login-container" onSubmit={this.handleSubmit}>
             <h1 className="title">LOGIN</h1>
             <div className="input-div">

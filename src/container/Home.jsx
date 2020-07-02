@@ -1,11 +1,11 @@
 import React from "react";
 import FormFile from "../components/FormFile";
-import Login from "..//container/Login";
+// import Login from "..//container/Login";
 function Home() {
   return (
     <div>
-      <Login/>
-      <FormFile/>
+      {/* <Login/> */}
+      <FormFile />
     </div>
   );
 }
