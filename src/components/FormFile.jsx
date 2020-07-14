@@ -3,8 +3,6 @@ import { storage } from "../firebase/index";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 function FormFile() {
@@ -51,44 +49,38 @@ function FormFile() {
   };
   console.log(file);
   return (
-    <Container>
-      <Row>
-        <Col xs={12} md={6}>
-          <Form>
-            <Form.Group>
-              <Form.Label>Selecciona el año</Form.Label>
-              <Form.Control as="select" onChange={handleSelect}>
-                <option>Primero</option>
-                <option>Segundo</option>
-                <option>Tercero</option>
-                <option>Cuarto</option>
-                <option>Quinto</option>
-              </Form.Control>
-            </Form.Group>
-            <Form.Group>
-              <Form.File
-                type="file"
-                onChange={handleChange}
-                label="Suba un PDF"
-              />
-            </Form.Group>
-            <Form.Group>
-              <Button onClick={handleUpload}>Subir Archivo</Button>
-            </Form.Group>
-            <ProgressBar
-              animated
-              variant="success"
-              now={progress}
-              max="100"
-              label={`${progress}%`}
-            />
-            <br />
-            {url}
-            <br />
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+    // <Row xs={12} md={6}>
+    <Col md={6}>
+      <Form>
+        <Form.Group>
+          <Form.Label>Selecciona el año</Form.Label>
+          <Form.Control as="select" onChange={handleSelect}>
+            <option>Primero</option>
+            <option>Segundo</option>
+            <option>Tercero</option>
+            <option>Cuarto</option>
+            <option>Quinto</option>
+          </Form.Control>
+        </Form.Group>
+        <Form.Group>
+          <Form.File type="file" onChange={handleChange} label="Suba un PDF" />
+        </Form.Group>
+        <Form.Group>
+          <Button onClick={handleUpload}>Subir Archivo</Button>
+        </Form.Group>
+        <ProgressBar
+          animated
+          variant="success"
+          now={progress}
+          max="100"
+          label={`${progress}%`}
+        />
+        <br />
+        {url}
+        <br />
+      </Form>
+    </Col>
+    // </Row>
   );
 }
 

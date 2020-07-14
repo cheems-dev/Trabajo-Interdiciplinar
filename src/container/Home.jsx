@@ -1,12 +1,17 @@
 import React from "react";
 import FormFile from "../components/FormFile";
-// import Login from "..//container/Login";
+import ListFiles from "./ListFiles";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+
 function Home() {
   return (
-    <div>
-      {/* <Login/> */}
-      <FormFile />
-    </div>
+    <Container>
+      <Row>
+        <FormFile />
+        <ListFiles />
+      </Row>
+    </Container>
   );
 }
 
