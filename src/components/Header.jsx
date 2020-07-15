@@ -15,11 +15,12 @@ const Header = () => {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto"></Nav>
         <Form inline>
-          <Button variant="outline-success">Login</Button>
+          <Link to="/login">
+            <Button variant="outline-success">Login</Button>
+          </Link>
         </Form>
       </Navbar.Collapse>
     </Navbar>
   );
 };
-
 export default Header;

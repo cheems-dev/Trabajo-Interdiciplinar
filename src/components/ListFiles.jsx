@@ -1,6 +1,6 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
-import Files from "../components/Files";
+import Files from "./Files";
 import { Link } from "react-router-dom";
 
 const ListFiles = () => {

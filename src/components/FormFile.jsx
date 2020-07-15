@@ -49,7 +49,6 @@ function FormFile() {
   };
   console.log(file);
   return (
-    // <Row xs={12} md={6}>
     <Col md={6}>
       <Form>
         <Form.Group>
@@ -80,7 +79,6 @@ function FormFile() {
         <br />
       </Form>
     </Col>
-    // </Row>
   );
 }
 
