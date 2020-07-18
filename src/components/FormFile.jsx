@@ -50,6 +50,7 @@ function FormFile() {
   console.log(file);
   return (
     <Col md={6}>
+      <h1 className="text-center">Sube tu PDF</h1>
       <Form>
         <Form.Group>
           <Form.Label>Selecciona el año</Form.Label>
