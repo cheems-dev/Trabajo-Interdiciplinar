@@ -7,6 +7,7 @@ import ContentFile from "../container/ContentFile";
 import NotFound from "../container/NotFound";
 import Login from "../container/Login";
 import HomeTeacher from "../container/HomeTeacher";
+import FormTeacher from "../components/FormTeacher";
 
 const App = () => (
   <BrowserRouter>
@@ -14,8 +15,10 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={FormTeacher} />
         <Route exact path="/teacher" component={HomeTeacher} />
         <Route exact path="/content" component={ContentFile} />
+        <Route exact path="/HomeTeacher" component={HomeTeacher} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

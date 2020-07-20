@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import FormFile from "./FormFile";
+import Download from "./Download";
 import { toast } from "react-toastify";
 
 const Syllabus = () => {
@@ -68,6 +69,7 @@ const Syllabus = () => {
       <Row>
         <FormFile />
         <SyllabusForm {...{ addOrEditLink, currentId, links }} />
+        {/*{<Download/>}*/}
       </Row>
       <Row>
         {links.map((link) => (
