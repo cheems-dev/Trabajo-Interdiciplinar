@@ -5,6 +5,8 @@ import { toast } from "react-toastify";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
+import './css/formUpload.css';
+import './css/Column.css';
 const SyllabusForm = (props) => {
   const initialStateValues = {
     title: "",
@@ -59,6 +61,7 @@ const SyllabusForm = (props) => {
 
   return (
     <Col md={6}>
+      <div class="form-style-10 .inner-wrap">
       <h1 className="text-center">Formulario</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
@@ -114,6 +117,7 @@ const SyllabusForm = (props) => {
           </Button>
         </Form.Group>
       </Form>
+      </div>
     </Col>
   );
 };

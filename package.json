@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.5.0",
+    "connect": "^3.7.0",
     "dotenv": "^8.2.0",
     "firebase": "^7.16.1",
     "react": "^16.8.6",
@@ -14,7 +15,11 @@
     "react-scripts": "^3.4.1",
     "react-toastify": "^6.0.8",
     "react-with-firebase-auth": "^1.3.2",
+<<<<<<< HEAD
     "reactfire": "^2.0.0-alpha.3"
+=======
+    "serve-static": "^1.14.1"
+>>>>>>> 001f2db24af611a5784358e39bfb4eba7f0ef2c2
   },
   "scripts": {
     "start": "react-scripts start",
