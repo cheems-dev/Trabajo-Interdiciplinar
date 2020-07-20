@@ -4,7 +4,8 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
-
+import './css/formUpload.css';
+import './css/Column.css';
 function FormFile() {
   const [file, setFile] = useState(null);
   const [url, setUrl] = useState("");
@@ -49,7 +50,9 @@ function FormFile() {
   };
   console.log(file);
   return (
-    <Col md={6}>
+
+    <Col class="divForm" md={6}>
+      <div class="form-style-10 .inner-wrap">
       <h1 className="text-center">Sube tu PDF</h1>
       <Form>
         <Form.Group>
@@ -79,7 +82,9 @@ function FormFile() {
         {url}
         <br />
       </Form>
+      </div>
     </Col>
+
   );
 }
 
