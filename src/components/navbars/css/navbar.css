@@ -1,0 +1,33 @@
+.header {
+    height: 75px;
+    display: flex;
+    justify-content: flex-end;
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(192, 192, 192) 1px 3px 10px;
+}
+
+.header .header__actions {
+    display: flex;
+    width: 500px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header .header__actions h4 {
+    font-weight: 400;
+}
+
+.header .header__actions button {
+    font-size: 16px;
+    padding: .7em 3em;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background: rgb(34, 90, 163);
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.header .header__actions button:hover {
+    box-shadow: rgb(191, 199, 238) 1px 1px 10px;
+}

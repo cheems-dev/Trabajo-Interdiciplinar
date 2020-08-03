@@ -1,0 +1,43 @@
+.homeview__student {
+    flex: 4;
+    border: 1px solid blue;
+    padding: 2em;
+}
+
+.student__header {
+    border-bottom: 1px solid black;
+}
+
+.student_body {
+    margin-top: 2em;
+    border: 1px solid;
+    display: flex;
+}
+
+.student__datos {
+    flex: 1;
+}
+
+.student__form {
+    flex: 2;
+    border: 1px solid green;
+    border-radius: 10PX;
+}
+
+.form-column {
+    display: flex;
+    height: 50%;
+    width: 100%;
+    align-items: center;
+}
+
+.label__student {
+    font-size: 14px;
+    margin: 5px;
+    width: 75px;
+}
+
+.student_input {
+    height: 40px;
+    width: 35%;
+}

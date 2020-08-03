@@ -1,0 +1,43 @@
+.checkinstudent {
+    border: 1px solid red;
+    height: 100vh;
+    display: flex;
+}
+
+.checkin_form {
+    border: 1px solid blue;
+    padding: 1em;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkin_form form {
+    border-radius: 5px;
+    box-shadow: rgb(148, 147, 147) 1px 1px 10px;
+    width: 100%;
+    padding: 1em;
+}
+
+.form-control {
+    display: flex;
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 100%;
+    margin: 1em 0;
+}
+
+.form-control input {
+    height: 40px;
+    width: 100%;
+    margin: 5px;
+}
+
+.btn-register {
+    /* width: 300px; */
+}
+
+.checkin_image {
+    flex: 1;
+}

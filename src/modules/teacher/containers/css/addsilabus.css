@@ -1,0 +1,22 @@
+.form__container {
+    border: 1px solid red;
+    width: 500px;
+}
+
+.add {
+    height: 280px;
+}
+
+.select {
+    width: 81%;
+}
+
+.disabled {
+    opacity: .5;
+    color: rgb(216, 216, 218);
+    background: rgb(30, 37, 116);
+}
+
+.disabled:hover {
+    box-shadow: none;
+}

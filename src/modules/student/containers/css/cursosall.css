@@ -1,0 +1,22 @@
+.cursosall {
+    flex: 4;
+    padding: 2em;
+}
+
+.cursosall__container {
+    border: 1px solid blue;
+    display: flex;
+    flex-flow: wrap;
+    padding: 1em;
+}
+
+.card-curso {
+    padding: 1em;
+    width: 230px;
+    font-size: 14px;
+    height: 300px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: rgb(116, 113, 113) 1px 1px 10px;
+    margin: 1em;
+}
