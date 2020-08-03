@@ -55,7 +55,7 @@ Para integrarlo con el backend el cual es requisito para su funcionamiento.
 
 ## Equipo de Desarrollo
 
-- **Gonzalo Alejandro Caira Aguilar** - Correo : [gcairaa@unsa.edu.pe](notion://www.notion.so/gcairaa@unsa.edu.pe)
+- **Gonzalo Alejandro Caira Aguilar** - Correo : [gcairaa@unsa.edu.pe](gcairaa@unsa.edu.pe)
 - **Ccalluchi Lopez Luis Alberto** - Correo : [daprimovaria@outlook.com](mailto:daprimovaria@outlook.com)
 - **Yanqui Vera Henry Aron** - Correo : [hyanquiv@unsa.edu.pe](notion://www.notion.so/hyanquiv@unsa.edu.pe)
 - **Vargas Herhuay Edwar Jhoel** - Correo : [evargashe@unsa.edu.pe](notion://www.notion.so/evargashe@unsa.edu.pe)
