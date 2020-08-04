@@ -1,22 +1,4 @@
-# Configuracion para entorno local
-
-## Backend
-
-***Comandos para levantar nuestro backend en entorno local***
-
-1. Instalar nuestras dependencias de desarrollo 
-
-    ```bash
-    npm install 
-    ```
-
-2. Por ultimo, levantamos nuestro backend
-
-    ```bash
-    npm run start
-    ```
-
-## Frontend
+# Frontend T.I 👨‍🔧
 
 ## Tabla de Contenidos
 

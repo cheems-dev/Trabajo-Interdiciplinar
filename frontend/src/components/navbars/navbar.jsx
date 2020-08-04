@@ -4,7 +4,7 @@ const navbar = (props) => {
     return (
         <header className='header' >
             <section className="header__actions">
-                <h4>name</h4>
+                {/* <h4>name</h4> */}
                 <button onClick={() => {
                     window.location.reload(); 
                     props.logout();
