@@ -1,9 +1,9 @@
-import express from 'express';
-import { user_router } from './user';
-import { silabo_router } from './silabo';
-import { curso_router } from './curso';
+import express from 'express';//para iniciar el servidor
+import { user_router } from './user'; //rutas del usuario
+import { silabo_router } from './silabo'; //rutas del silabo
+import { curso_router } from './curso'; //rutas del curso
 
-export const Routes: express.Application = express();
-Routes.use('', user_router);
-Routes.use('', silabo_router);
-Routes.use('', curso_router);
+export const Routes: express.Application = express(); //exporta las rutas e inicia la aplicacion
+Routes.use('', user_router); //asigna la ruta del usuario
+Routes.use('', silabo_router); //asigna la ruta del silabo
+Routes.use('', curso_router); //asigna la ruta del curso
