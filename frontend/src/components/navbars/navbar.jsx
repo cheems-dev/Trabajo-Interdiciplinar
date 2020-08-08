@@ -1,6 +1,8 @@
-import React from 'react'
-import './css/navbar.css'
-const navbar = (props) => {
+import React from 'react'//react
+import './css/navbar.css'//estilos
+
+//barra de navegacion
+const navbar = (props) => { 
     return (
         <header className='header' >
             <section className="header__actions">

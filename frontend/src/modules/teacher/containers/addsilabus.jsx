@@ -1,15 +1,18 @@
-import React, { useState, useEffect, Component } from 'react'
-import { Link } from 'react-router-dom'
-import File from '../../../components/inputs/file';
-import './css/addsilabus.css'
-import { AuthService } from '../../../services/Auth';
-import Swal from 'sweetalert2';
+import React, { useState, useEffect, Component } from 'react' //react
+import { Link } from 'react-router-dom' //links
+import File from '../../../components/inputs/file'; //para el archivo
+import './css/addsilabus.css' //estilo
+import { AuthService } from '../../../services/Auth'; //autenticacion
+import Swal from 'sweetalert2'; //alertas
+
+//Para añadir un silabo
 const AddSilabus = (props) => {
 
-    const _sAuth = new AuthService();
+    const _sAuth = new AuthService(); //para autenticar al docente
 
-    const [disabled, setDisabled] = useState(false)
-    const [data, setData] = useState({
+    const [disabled, setDisabled] = useState(false) //para el estado
+    //estructura del dato
+    const [data, setData] = useState({ 
         objectSilab: {
             title: "",
             year: "",
@@ -21,19 +24,23 @@ const AddSilabus = (props) => {
         inputs: false
     })
 
-    const [curso, setCurso] = useState({name: ''})
+    const [curso, setCurso] = useState({name: ''}) //curso
 
+    //para seleccionar
     const handleSelect = () => {
         setDisabled(!disabled)
     }
 
+    //para actualizar
     const handleUpdate = (e) => {
         setData({
             ...data,
+            //para actualizar el silabo
             objectSilab: {
                 ...data.objectSilab,
                 [e.target.name]: e.target.value
             },
+            //para actualizar el curso
             objectCurso: {
                 ...data.objectCurso,
                 [e.target.name]: e.target.value
@@ -41,15 +48,19 @@ const AddSilabus = (props) => {
         })
     }
 
+    //para el curso
     const handleCurso = (e) => {
-        if(e.target.name === 'name') {
-            setCurso({[e.target.name]: e.target.value})
+        if(e.target.name === 'name') { //comparacion estrica del nombre
+            setCurso({[e.target.name]: e.target.value}) //guardar el nombre
         }
     }
 
+    //obtener el archivo
     const getFile = (file) => {
+        //
         setData({
-            ...data, 
+            ...data,
+            //obtner el silabo 
             objectSilab: {
                 ...data.objectSilab,
                 pdfname: file.name,
@@ -67,7 +78,9 @@ const AddSilabus = (props) => {
         classList = 'btn-submit'
     }
 
-    const successFetch = async (silabo, token) => {        
+    //agregar silabo
+    const successFetch = async (silabo, token) => {    
+        //autenticacion y metodo de envio    
         try {
             let requestOptions = {
                 method: 'POST', 
@@ -77,36 +90,40 @@ const AddSilabus = (props) => {
                     "token": token
                 }
             }
-            let response = await fetch('http://localhost:3001/silabo-add', requestOptions)
-            if(response.status === 201) {
-                Swal.fire({
+            let response = await fetch('http://localhost:3001/silabo-add', requestOptions) //agregar en la base de datos
+            if(response.status === 201) { //si se ha cargado
+                //muestra la alerta
+                Swal.fire({ 
                     icon: 'success',
                     text: 'Curso agregado exitosamente',
                     timer: 2000,
                     title: 'Exito'
                 })
-                props.history.push('/teacher')
+                props.history.push('/teacher')//para el historial de navegacion
             }   
-
+        //si hubo algun error
         } catch(error) {    
             console.log(error);
             throw error
         }
     }
 
+    //para enviar
     const handleSubmit = (e) => {        
         e.preventDefault();
-        let token = _sAuth.tokenTeacher;
-        let silabo = data.objectSilab
-        let body = {
+        let token = _sAuth.tokenTeacher; //autenticacion del docente
+        let silabo = data.objectSilab //silabo
+        let body = { //estructura para guardar
             objectSilabo: silabo,
             objectCurso: curso
         }
         console.log(JSON.stringify(body));
-        successFetch(body, token);            
+        successFetch(body, token);//envia a la funcion para añadir el silabo            
     }
 
+    //return
     return (
+        //Interfaz para añadir el silabo
         <main className="silabus__container">
             <section className="silabus__top">
                 <article>

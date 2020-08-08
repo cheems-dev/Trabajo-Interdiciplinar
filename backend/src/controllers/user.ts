@@ -45,7 +45,7 @@ export const checkinUser = (req: Request, res: Response) => {//funcion para comp
 export const logged = (req: Request, res: Response) => {//para acceder
     let {body} = req;//trae la data
 
-    userModel.findOne(//para buscar al uruario
+    userModel.findOne(//para buscar al usuario
         {email: body.email},//asignacion a email desde los datos
         (err, userDB: any) => {
             if(err) {//si existe algun error inesperado

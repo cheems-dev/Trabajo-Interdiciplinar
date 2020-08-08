@@ -1,28 +1,33 @@
 export class AuthService {
-    token;
-    role;
-    tokenTeacher;
+    token; //token
+    role; //rol
+    tokenTeacher; //token de docente
 
+    //contructor
     constructor() {
-       this.loadToken();  
-       this.loadTokenTeacher();                      
+       //para cargar los tokens 
+       this.loadToken();  //estudiante
+       this.loadTokenTeacher(); //docente                      
     }
     
+    //carga el token de estudiante
     loadToken(){
-      if(localStorage.getItem('token')){
-        this.token = localStorage.getItem('token')                  
+      if(localStorage.getItem('token')){ //si no esta vacio
+        this.token = localStorage.getItem('token')   //carga                 
       } 
-      if(localStorage.getItem('role')) {
-          this.role = localStorage.getItem('role')
+      if(localStorage.getItem('role')) { //si no esta vacio
+          this.role = localStorage.getItem('role') //carga 
       }                 
     }
 
+    //carga el token de docente
     loadTokenTeacher() {
-        if(localStorage.getItem('tokenTeacher')){
-            this.tokenTeacher = localStorage.getItem('tokenTeacher')                  
+        if(localStorage.getItem('tokenTeacher')){ //si no esta vacio
+            this.tokenTeacher = localStorage.getItem('tokenTeacher')   //carga               
           } 
     }
 
+    //guarda el token de estudiante
     saveToken(token, role){
        this.token = token;   
        this.role = role;              
@@ -30,6 +35,7 @@ export class AuthService {
        localStorage.setItem('role', role)
     }  
 
+    //guarda el token de docente
     saveTokenTeacher(tokenTeacher, role){
        this.tokenTeacher = tokenTeacher;  
        this.role = role;               
@@ -37,9 +43,11 @@ export class AuthService {
        localStorage.setItem('role', role)                 
     }     
     
+    //si esta registrado como docente
     isLoggedTeacher() {
         try {
-            if(this.tokenTeacher){
+            if(this.tokenTeacher){ //si tiene un token
+                //para actualizar el token
                 let payload = this.tokenTeacher.split('.')[1];  
                 let payloadDecodificado = window.atob(payload);
                 let payloadJSON = JSON.parse(payloadDecodificado);
@@ -52,6 +60,7 @@ export class AuthService {
             }else {
                 return false
             }
+        //error    
         } catch(err) {
             localStorage.removeItem('token');
             localStorage.removeItem('role')
@@ -60,9 +69,11 @@ export class AuthService {
         }
     }
 
+    //si esta registrado como estudiante
     isLogged(){
        try {
-            if(this.token){
+            if(this.token){ //si tiene un token
+                //para actualizar el token
                 let payload = this.token.split('.')[1];  
                 let payloadDecodificado = window.atob(payload);
                 let payloadJSON = JSON.parse(payloadDecodificado);
@@ -75,7 +86,7 @@ export class AuthService {
             } else {
                 return false
             } 
-
+        //error
        } catch(error){
           localStorage.removeItem('token');
           localStorage.removeItem('role')

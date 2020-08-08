@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import './css/homeview.css'
-import { AuthService } from '../../../services/Auth';
+import React, { useState, useEffect } from 'react' //react
+import './css/homeview.css' //estilos
+import { AuthService } from '../../../services/Auth'; //autenticacion
+
+//ver home
 const Homeview = (props) => {
-    const _sAuth = new AuthService();
+    const _sAuth = new AuthService(); //para la autenticacion
 
-    const [data, setData] = useState()
+    const [data, setData] = useState() //para los datos
 
+    //obtener el usuario
     const getUser = async (token) => {
+        //autenticacon y metodo de envio
         try {
             let requestOptions = {
                 method: 'GET', 
@@ -15,23 +19,30 @@ const Homeview = (props) => {
                     "token": token
                 }
             }
-            let response = await fetch('http://localhost:3001/user', requestOptions)
+
+            let response = await fetch('http://localhost:3001/user', requestOptions)//esperar a que se cargue el usuario
+            //si tuvo exito
             if(response.status === 200) {
                 let result = await response.json();
                 console.log(result);
-                setData(result.data)
+                setData(result.data)//se trae los datos del usuario
             }
-
+        
+        //si existe algun error    
         }catch(err) {
             console.log(err);
         }
     }
+
+    //inicializar
     useEffect(() => {
         getUser(_sAuth.token)
     }, [])
 
     return (
-        <form className="homeview__student" >  
+        //para ver el home
+        <form className="homeview__student" >
+            {/* Para ver los datos del estudiante */ }
             <section className="student__header">
                 <h2>Perfil</h2>
             </section>
@@ -44,6 +55,7 @@ const Homeview = (props) => {
                         </div>
                     
                         <section className="form-group student__form">
+                            {/* Nombre y Apellido */ }
                             <div className="form-column" >
                                 <label htmlFor="" className="label__student" >Nombre</label>
                                 <input type="text"
@@ -62,6 +74,8 @@ const Homeview = (props) => {
                                     // onChange={handleUpdate}
                                 />
                             </div>
+
+                            {/* Email y Telefono */ }
                             <div className="form-column" >
                                 <label htmlFor="" className="label__student" >Email</label>
                                 <input type="email"
@@ -85,10 +99,12 @@ const Homeview = (props) => {
                     
                     </section>
                     <section className="student_body">
+                        {/* Apartado academico */ }
                         <div className="student__datos">
                             Formación Academica
                         </div>
                         <section className="form-group student__form">
+                            {/* Universidad y Semestre */ }
                             <div className="form-column" >
                                 <label htmlFor="" className="label__student" >Universidad</label>
                                 <input type="text"
@@ -108,6 +124,8 @@ const Homeview = (props) => {
                                     // onChange={handleUpdate}
                                 />
                             </div>
+
+                            {/* Carrera y Año */ }
                             <div className="form-column" >
                                 <label htmlFor="" className="label__student" >Carrera Profesional</label>
                                 <input type="email"

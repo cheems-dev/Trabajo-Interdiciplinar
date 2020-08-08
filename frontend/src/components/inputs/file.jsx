@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import * as firebase from "firebase";
-import Swal from "sweetalert2";
-import "./css/file.css";
+import React, { Component } from "react"; //para react
+import * as firebase from "firebase"; //para firebase 
+import Swal from "sweetalert2"; //para las alertas
+import "./css/file.css"; //estilos
 
 // configuraciones de firebase | lestgo
 var firebaseConfig = {
@@ -19,12 +19,15 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 // firebase.analytics();
 
+//referencia al storage de firebase
 let storage = firebase.storage().ref();
 
+//estructura para guardar el archivo
 class file extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    //para guardar el estado
+    this.state = { 
       archivo: undefined,
       disabled: true,
       input: false,
@@ -32,6 +35,7 @@ class file extends Component {
     };
   }
 
+  //para seleccionar el archivo
   updateImage = (e) => {
     this.setState({
       // ...this.state,
@@ -41,16 +45,18 @@ class file extends Component {
     });
   };
 
+  //para subir el archivo
   subirImagen = () => {
-    let nombreArchivo = this.state.archivo.name;
-    let nombreFinal = +new Date() + "-" + nombreArchivo;
+    let nombreArchivo = this.state.archivo.name; //guarda el nombre del archivo
+    let nombreFinal = +new Date() + "-" + nombreArchivo;//agrega la fecha al final del nombre
 
-    let metadata = {
+    let metadata = {//metadatos
       contentType: this.state.archivo.type,
     };
 
-    if (this.state.file) {
-      Swal.fire({
+    if (this.state.file) {//si hay algun archivo seleccionado
+      Swal.fire({//para las alertas
+        //confirmar para subir el archivo
         title: "¿Estás seguro?",
         text: "NOTA!, una vez guardes los cambios, no podras modificarlos",
         icon: "warning",
@@ -59,52 +65,58 @@ class file extends Component {
         cancelButtonColor: "#d33",
         confirmButtonText: "Si, cargar archivo",
       }).then((result) => {
+        //sube al archivo
         if (result.value) {
           storage
-            .child("react-firebase/" + nombreFinal)
-            .put(this.state.archivo, metadata)
-            .then((response) => {
-              Swal.fire({
+            .child("react-firebase/" + nombreFinal)//agrega la ruta
+            .put(this.state.archivo, metadata)//sube el archivo 
+            .then((response) => { //comprobacion
+              //para indicar que se subio correctamente
+              Swal.fire({ //
                 icon: "success",
                 text: "Carga exitosa",
                 timer: 2000,
                 title: "Exito",
               });
+              //para cambiar los estados
               this.setState({
                 ...this.state,
                 disabled: true,
                 input: true,
                 file: false,
               });
-              return response.ref.getDownloadURL();
+              return response.ref.getDownloadURL(); //retorna el link de descarga
             })
             .then((url) => {
-              let objectPdf = {
+              let objectPdf = {//el pdf consiste en el link y el nombre
                 url,
                 name: nombreFinal,
               };
-              this.props.file(objectPdf);
+              this.props.file(objectPdf);//se agrega la propiedad
             })
-            .catch((err) => console.log(err, "err"));
+            .catch((err) => console.log(err, "err"));//si existe algun error lo muestra en consola
         }
       });
     }
   };
 
+  //render
   render() {
     let classList = "";
-    if (this.state.disabled) {
+    if (this.state.disabled) {//si esta desabilitado
       classList = ["btn-file disabled"];
     } else {
       classList = "btn-file";
     }
     return (
+      //Para seleccionar el archivo
       <div className="file__container">
         <input
           type="file"
           disabled={this.state.input}
           onChange={this.updateImage}
         />
+        {/* para subir el archivo */}  
         <button
           type="button"
           className="btn-file"
