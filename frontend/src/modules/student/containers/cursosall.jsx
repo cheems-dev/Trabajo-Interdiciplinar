@@ -1,86 +1,78 @@
-import React, { useEffect, useState } from 'react'//hooks y react
-import './css/cursosall.css'//estulos
-import { AuthService } from '../../../services/Auth';//para la autenticacion
+import React, { useEffect, useState } from 'react'
+import './css/cursosall.css'
+import { AuthService } from '../../../services/Auth';
+
+function searchingItem(term){
+    return function(x){
+        return x.name.includes(term) || !term;
+    }
+}
 
 
 const Cursosall = () => {
-    const _sAuth = new AuthService();//para la autenticacion
-    const [curso, setCurso] = useState([]) //hook para un curso
-    const [cursos, setCursos] = useState([])//hook para todos los cursos
-
-    //para obtener un curso
-    const getCursos = async (token) => {//
-        //
+    const _sAuth = new AuthService();
+    const [curso, setCurso] = useState([])
+    const [cursos, setCursos] = useState([])
+    const [search , setSearch] =useState("");
+    const getCursos = async (token) => {
         try {
             let requestOptions = {
-                method: 'GET',//metodo de envio 
-                //verificacion
+                method: 'GET', 
                 headers: {
                     'Content-Type': 'application/json',
                     "token": token
                 }
             }
-            let response = await fetch('http://localhost:3001/cursos', requestOptions);//traer los datos de un curso
-            //
+            let response = await fetch('http://localhost:3001/cursos', requestOptions);
             if(response.status === 200) {
                 let result = await response.json();
                 // console.log(result);
-                setCurso(result.data)//guarda el curso 
+                setCurso(result.data)
             }
-        //error    
         } catch(err) {
             console.log(err);
         }
     }
-
-    //para obtener todos los cursos
     const getCursosAll = async (token) => {
         try {
             let requestOptions = {
-                method: 'GET',//metodo de envio 
-                //para la verificacion
+                method: 'GET', 
                 headers: {
                     'Content-Type': 'application/json',
                     "token": token
                 }
             }
-            let response = await fetch('http://localhost:3001/cursos-all', requestOptions);//traer los datos de todos los cursos
-            //si fue exitoss
+            let response = await fetch('http://localhost:3001/cursos-all', requestOptions);
             if(response.status === 200) {
-                let result = await response.json();//espera la respuesta
+                let result = await response.json();
                 console.log(result.data);
-                setCursos(result.data)//guarda todos los cursos
+                setCursos(result.data)
             }
-        //si hubo algun error    
         } catch(err) {
             console.log(err);
         }
     }
 
 
-    const handleRegister = async (id) => {//para registrarse en un curso
+    const handleRegister = async (id) => {
         try {
             let requestOptions = {
-                method: 'PUT',//metodo de envio 
-                headers: {//verificar
+                method: 'PUT', 
+                headers: {
                     'Content-Type': 'application/json',
-                    "token": _sAuth.token //token 
+                    "token": _sAuth.token
                 }
             }
-            let response = await fetch(`http://localhost:3001/register-curso/${id}`, requestOptions);//llama a la base de datos con el id para el registro
-            //si fue exitosos
+            let response = await fetch(`http://localhost:3001/register-curso/${id}`, requestOptions);
             if(response.status === 200) {
-                let result = await response.json();//espera la respuesta
+                let result = await response.json();
                 console.log(result.data);
-                window.location.reload()//actualiza
+                window.location.reload()
             }
-        //errores    
         } catch(err) {
             console.log(err);
         }
     }
-
-    //para inicializar 
     useEffect(() => {
         getCursos(_sAuth.token);
         
@@ -90,11 +82,12 @@ const Cursosall = () => {
         getCursosAll();
     }, []);
 
-    //return
     return (
         <div className="cursosall" >
             <section className="student__header">
                 <h2>Cursoss</h2>
+
+            
             </section>
                 <table>
                     <thead>
@@ -105,7 +98,6 @@ const Cursosall = () => {
                     </thead>
                     <tbody>
                     {
-                        //para el registro
                         cursos && (
                             cursos.map(cur => {
                                 return (                                                                    
@@ -115,6 +107,7 @@ const Cursosall = () => {
                                         </td>
                                         <td>
                                             {
+                                                
                                                 cur.student.length > 0 ? (
                                                     <button  onClick={() => {
                                                     handleRegister(cur._id)
@@ -122,8 +115,10 @@ const Cursosall = () => {
                                                 ) : (
                                                     <button onClick={() => {
                                                         handleRegister(cur._id)
-                                                    }} >Registrarse</button>                                                
+                                                    }} >Registrarse</button>
+
                                                 )
+                                                
                                             }
                                         </td>
                                     </tr>
@@ -132,12 +127,21 @@ const Cursosall = () => {
                         )
                     }
                     </tbody>
+
+            <div className="cursosall">
+                <h2>Find Your Silabus By Name</h2>
+                    <input
+                    type="text" 
+                    name="search" 
+                    placeholder="find your course" 
+                    onChange={e=>setSearch(e.target.value)}
+                    />
+            </div>
                 </table>
             <section className="cursosall__container">
-                {          
-                //para mostrar los cursos         
+                {                   
                     curso.length > 0 && (
-                        curso.map(cur => (
+                        curso.filter(searchingItem(search)).map(cur => (
                             <div className="card-curso" key={cur._id}>
                                 <div className="card-image"></div>
                                 <div className="card-budy">

@@ -1,20 +1,25 @@
-import React, { useEffect, useState } from 'react';//react
-import './css/homeview.css';//estilo
-import { AuthService } from '../../../services/Auth';//autenticacion
-    
+import React, { useEffect, useState } from 'react';
+import './css/homeview.css';
+import { AuthService } from '../../../services/Auth';
+import { Link } from "react-router-dom";
+
+
+function searchingTerm(term){
+    return function(x){
+        return x.name.includes(term) || !term;
+    }
+  }
 
 const Homeview = (props) => {
-    const _sAuth = new AuthService();//autenticacion
-    //historial de navegacion
+    const _sAuth = new AuthService();
     const handleHistory = () => {
         props.history.push('/teacher/add')
     }
     
-    const [data, setData] = useState([]); //hook para lso datos
-
-    //para obtener los cursos
+    const [data, setData] = useState([]);
+    const [search,setSearch] =useState("");
+    const [user, setUser]= useState("");
     const getCursos = async (token) => {
-        //autenticacion y metodo de envio
         try {
             let requestOptions = {
                 method: 'GET', 
@@ -23,29 +28,53 @@ const Homeview = (props) => {
                     "token": token
                 }
             }
-            let response = await fetch('http://localhost:3001/cursos-teacher-all', requestOptions) //trae los cursos
-            if(response.status === 200) { //si tuvo exito
-                let result = await response.json(); //espera a que se carguen los cursos en result
-                setData(result.data) //guarda los cursos en el hook
+            let response = await fetch('http://localhost:3001/cursos-teacher-all', requestOptions)
+            if(response.status === 200) {
+                let result = await response.json();
+                setData(result.data)
+                setUser(token)
             }
-        //si gubo algun error
+
         }catch(err) {
             console.log(err);
         }
     }
-    //inicializar
+    const deleteTask=(token)=>{
+        if(window.confirm('Are you sure you want to delete it?'))
+        {
+            fetch(`http://localhost:3001/silabo-delete/${token}`,{
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                "token": token
+            }
+            })
+            .then(data=>{
+                console.log(data);
+                getCursos(user);
+            });
+        }
+        
+    }
+    
     useEffect(() => {
         let token = _sAuth.tokenTeacher;
         getCursos(token)
     }, [])
 
-    //return
     return (
         <main className="silabus__container" >
             <section className="silabus__top">
                 <h2>Silabus</h2>
-                <button onClick={handleHistory} >Agregar Silabus</button> {/* Ruta para añadir un curso */}
+                <button onClick={handleHistory} >Agregar Silabus</button>
             </section>
+            <div className="container">
+                <h1>Find by Silabus by name</h1>
+                <input type="text" 
+                placeholder="find by silabus by name"
+                name="search"
+                onChange={(e)=>setSearch(e.target.value)}/>
+            </div>
             <table className="table" >
                 <thead>
                     <tr>
@@ -71,16 +100,18 @@ const Homeview = (props) => {
                 </thead>
                 <tbody>
                     {
-                        //para mostrar los cursos
                         data ? (
-                            data.map(cur => (
+                            data.filter(searchingTerm(search)).map(cur => (
                                 <tr key={cur._id} >
                                     <td>{cur.name}</td>
                                     <td>{cur.silabo[0].title}</td>
                                     <td>{cur.silabo[0].year}</td>
                                     <td>{cur.silabo[0].semestre}</td>
                                     <td><a href={`${cur.silabo[0].pdfurl}`}>{cur.silabo[0].pdfname}</a></td>
-                                    <td>actions</td>
+                                    <td>
+                                       
+                                        <button onClick={()=>deleteTask(cur._id)}>delete</button>
+                                    </td>
                                 </tr>
                             ))
                         ) : (
