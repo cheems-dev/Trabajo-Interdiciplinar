@@ -57,12 +57,6 @@
 
 ---
 
-## Conexion con Backend
-
-Para integrarlo con el backend el cual es requisito para su funcionamiento.
-
-- [Backend T.I](https://github.com/Davaria/Backend-TI)
-
 ## Documentación
 
 - [Documento de Propuesta](https://drive.google.com/file/d/1V3skdN_GePA_sizYVOXmV55tf8vSLHEz/view?usp=sharing)
