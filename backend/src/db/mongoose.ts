@@ -5,9 +5,10 @@ import { cursoSchema } from "../models/curso"; //esquema del curso
 
 export const connect__mongoDB = () => {//metodo par ala conexion
   mongoose.set("useFindAndModify", false);//
+  // añadir tu configuracion de db 
   mongoose
     .connect(
-      "mongodb+srv://revan:xMLm8DHdprY6ofN3yRDJYny7GGGxqSmf26BTDvhfQicBhJpfFiKFHv@cluster0.2hznd.mongodb.net/sgl?retryWrites=true&w=majority",//url
+      "mongodb+srv://<user>:<password>@cluster0.2hznd.mongodb.net/<db>?retryWrites=true&w=majority",//url
       //paremetros
       {
         useCreateIndex: true,
