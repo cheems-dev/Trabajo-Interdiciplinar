@@ -3,16 +3,16 @@ import * as firebase from "firebase"; //para firebase
 import Swal from "sweetalert2"; //para las alertas
 import "./css/file.css"; //estilos
 
-// configuraciones de firebase | lestgo
+// añade tus key de firebase
 var firebaseConfig = {
-  apiKey: "AIzaSyBEFxsDNVUpXS10oDrmLlUQvz6819FwVao",
-  authDomain: "interdiplinar.firebaseapp.com",
-  databaseURL: "https://interdiplinar.firebaseio.com",
-  projectId: "interdiplinar",
-  storageBucket: "interdiplinar.appspot.com",
-  messagingSenderId: "259613422518",
-  appId: "1:259613422518:web:ad2dbd664d17e64801471",
-  measurementId: "G-5QNN4Z884M",
+  apiKey: 
+  authDomain: 
+  databaseURL: 
+  projectId: 
+  storageBucket: 
+  messagingSenderId: 
+  appId:
+  measurementId: 
 };
 
 // Initialize Firebase
