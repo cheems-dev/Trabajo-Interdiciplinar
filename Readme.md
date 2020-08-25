@@ -67,8 +67,7 @@
 
 ## Equipo de Desarrollo
 
-- **Gonzalo Alejandro Caira Aguilar** - Correo : [gcairaa@unsa.edu.pe](notion://www.notion.so/gcairaa@unsa.edu.pe)
-- **Ccalluchi Lopez Luis Alberto** - Correo : [daprimovaria@outlook.com](mailto:daprimovaria@outlook.com)
-- **Yanqui Vera Henry Aron** - Correo : [hyanquiv@unsa.edu.pe](notion://www.notion.so/hyanquiv@unsa.edu.pe)
-- **Vargas Herhuay Edwar Jhoel** - Correo : [evargashe@unsa.edu.pe](notion://www.notion.so/evargashe@unsa.edu.pe)
-- **Bustamante Torres Luis Angel** - Correo : [lbustamantet@unsa.edu.pe](notion://www.notion.so/lbustamantet@unsa.edu.pe)
+- **Caira Aguilar Gonzalo Alejandro** - Correo : gcairaa@unsa.edu.pe
+- **Yanqui Vera Henry Aron** - Correo : hyanquiv@unsa.edu.pe
+- **Vargas Herhuay Edwar Jhoel** - Correo : evargashe@unsa.edu.pe
+- **Bustamante Torres Luis Angel** - Correo : lbustamantet@unsa.edu.pe
